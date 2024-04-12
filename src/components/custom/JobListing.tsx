@@ -17,7 +17,8 @@ const detailsData = [
 
 export function JobListing() {
   return (
-     <div className="rounded-lg border  border-zinc-200 bg-powder text-card-foreground shadow-sm">
+     // background slate 400
+     <div className="rounded-lg border  border-zinc-300 bg-powder/90 text-card-foreground shadow-sm">
        <div className="p-6 space-y-4">
          <div className="flex items-center space-x-4">
            <div className="flex items-center space-x-2">
@@ -33,10 +34,11 @@ export function JobListing() {
              <h3 className="text-lg font-bold text-charcoal">Frontend Engineer</h3>
              <p className="text-sm font-medium leading-none text-gray-500 dark:text-charcoal/40">Acme Corporation AB</p>
            </div>
-           <div className="flex items-center space-x-2">
-             <StarIcon className="w-5 h-5 text-gray-500"/>
+           <button className="flex items-center space-x-2 group">
+             {/*text-gray-500 */}
+             <StarIcon className="w-5 h-5 group-hover:text-charcoal fill-charcoal"/>
              <span className="sr-only">Bookmark</span>
-           </div>
+           </button>
          </div>
          <div className="grid gap-2">
            <p className="text-sm leading-none">
@@ -61,15 +63,14 @@ export function JobListing() {
            <Button
               type={"button"}
               color={"zinc"}
-              className="cursor-pointer border-t !border-zinc-200 !border-x-0 !border-b-0 transform transition duration-150 ease-in-out active:scale-95 active:border-2  active:py-1"
+              className="cursor-pointer border-t !border-zinc-200 !border-x-0 !border-b-0 transform transition duration-150 ease-in-out active:scale-95 active:border-2 shadow-md shadow-zinc-500  active:py-1"
            >
              Read More
            </Button>
-
            <Button
               type={"button"}
               color={"dark"}
-              className="cursor-pointer border-t !border-zinc-200  !border-x-0 !border-b-0 transform transition duration-150 ease-in-out active:scale-95 active:border-2  active:py-1"
+              className="cursor-pointer border-t !border-zinc-200 !border-x-0 !border-b-0 transform transition duration-150 ease-in-out active:scale-95 active:border-2 shadow-md shadow-zinc-500  active:py-1"
            >
              <SparklesIcon/>
              AI-Tailor

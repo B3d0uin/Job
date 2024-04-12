@@ -8,6 +8,12 @@ const config: Config = {
     ],
     theme: {
         extend: {
+          colors: {
+            tangerine: '#FF5B19',
+            charcoal: '#161616',
+            platinum: '#E5E3D2',
+            powder: '#AECACD',
+          },
             fontFamily: {
                 sans: ['var(--font-inter)'],
                 mono: ['var(--font-roboto-mono)'],

@@ -23,8 +23,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className={`${inter.variable} ${roboto_mono.variable}`}>
-        <body className={`${inter.variable} ${roboto_mono.variable} font-sans bg-[#161616]`}>{children}</body>
+       <html lang="en" className={`${inter.variable} ${roboto_mono.variable} h-full`}>
+       <body className={`${inter.variable} ${roboto_mono.variable} font-sans h-full bg-charcoal`}>{children}</body>
         </html>
     );
 }

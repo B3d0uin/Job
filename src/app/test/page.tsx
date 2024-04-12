@@ -1,4 +1,4 @@
-import {ChevronRightIcon} from '@heroicons/react/20/solid'
+
 import {Badge} from "@lib/components/badge";
 import {Button} from "@lib/components/button";
 

@@ -1,5 +1,4 @@
 
-import {Dialog, Transition} from '@headlessui/react'
 import {
   Bars3Icon, BookmarkIcon, BriefcaseIcon,
   Cog6ToothIcon,
@@ -8,8 +7,9 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import {Input} from "@lib/components/input";
-import {JobListing} from "@lib/components/custom/JobListing";
+
 import {SideBar} from "@lib/components/custom/sideBar";
+import JobListing from "@lib/components/custom/JobListing";
 
 const navigation = [
   {name: 'Dashboard', href: '#', icon: BriefcaseIcon, current: true},

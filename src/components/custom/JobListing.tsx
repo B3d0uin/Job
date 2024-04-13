@@ -11,19 +11,22 @@ import {Button} from "@lib/components/button";
 import {
 	daysLeftUntilLastApplication,
 	daysSincePublished,
-	getAllJobs,
+	getAllJobs, getJobsByTitle,
 	sanitizeDescription
 } from "@lib/utils/JobUtils";
 
 
-const JobListing = async () => {
-	const jobListings = await getAllJobs();
-	console.log(jobListings)
+export default async function JobListing({query, currentPage}: {
+	query: string;
+	currentPage: number;
+}) {
+	const jobListings = await getJobsByTitle(query, currentPage);
+	
 	return (
 		// background slate 400
 		<section className="flex flex-col gap-4">
 			
-			{jobListings.map((post) => (
+			{jobListings.jobs.map((post) => (
 				
 				<div key={post.id}
 					 
@@ -112,4 +115,3 @@ const JobListing = async () => {
 		</section>
 	);
 };
-export default JobListing;

@@ -42,7 +42,8 @@ export function JobListing() {
          </div>
          <div className="grid gap-2">
            <p className="text-sm leading-none">
-             We're looking for a frontend engineer to join our team. You will work on our customer-facing web
+             Were looking for a frontend engineer to join our team. You will
+             work on our customer-facing web
              applications, collaborating with our design and product teams to
              implement delightf
            </p>

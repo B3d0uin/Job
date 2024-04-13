@@ -8,7 +8,7 @@ export const getAllJobs = async () => {
 	return prisma.job.findMany();
 }
 
-export function sanitizeString(input: string): string {
+export function sanitizeDescription(input: string): string {
 	const REGEX_HTML_TAG: RegExp = /(<([^>]+)>)/gi;
 	return input.replace(REGEX_HTML_TAG, "");
 }

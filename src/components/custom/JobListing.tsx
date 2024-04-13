@@ -12,7 +12,7 @@ import {
 	daysLeftUntilLastApplication,
 	daysSincePublished,
 	getAllJobs,
-	sanitizeString
+	sanitizeDescription
 } from "@lib/utils/JobUtils";
 
 
@@ -21,10 +21,12 @@ const JobListing = async () => {
 	console.log(jobListings)
 	return (
 		// background slate 400
-		<div>
+		<section className="flex flex-col gap-4">
+			
 			{jobListings.map((post) => (
 				
 				<div key={post.id}
+					 
 					 className="rounded-lg border  border-zinc-300 bg-powder/90 text-card-foreground shadow-sm">
 					
 					<div className="p-6 space-y-4">
@@ -54,8 +56,8 @@ const JobListing = async () => {
 							</button>
 						</div>
 						<div className="grid gap-2">
-							<p className="text-sm leading-none   line-clamp-4 hover:line-clamp-none ">
-								{sanitizeString(post.description)}
+							<p className="text-sm leading-none   line-clamp-4  ">
+								{sanitizeDescription(post.description)}
 							</p>
 						</div>
 						<div className="flex items-center gap-4">
@@ -107,7 +109,7 @@ const JobListing = async () => {
 					</div>
 				</div>
 			))}
-		</div>
+		</section>
 	);
 };
 export default JobListing;

@@ -21,7 +21,6 @@ export default async function JobListing({query, currentPage}: {
 	currentPage: number;
 }) {
 	const jobListings = await getJobsByTitle(query, currentPage);
-	
 	return (
 		// background slate 400
 		<section className="flex flex-col gap-4">

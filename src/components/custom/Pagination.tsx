@@ -34,10 +34,12 @@ function DynamicPagination({currentPage, totalPages, query}: {
 					return (
 						<PaginationPage
 							key={page}
-							children={page.toString()}
+							
 							href={createPageURL(page)}
 							current={page === currentPage}
-						/>
+						>
+							{page.toString()}
+						</PaginationPage>
 					
 					
 					);

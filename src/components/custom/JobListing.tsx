@@ -110,7 +110,7 @@ export default async function JobListing({query, currentPage}: {
 									className="text-sm text-gray-500 dark:text-charcoal/70">{post.municipality}</span>
 							</li>
 							<li
-								className="flex items-center space-x-2">
+								className="hidden md:flex items-center space-x-2">
 								<CalendarIcon width="24"
 											  height="24"
 											  className="w-4 h-4 text-charcoal/70"/>

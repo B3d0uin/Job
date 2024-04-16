@@ -1,15 +1,13 @@
-// Assuming you have Prisma Client installed and set up
-import {PrismaClient} from '@prisma/client';
-
-const prisma = new PrismaClient();
 
 // Function to fetch total number of jobs
+import {prisma} from "@lib/utils/prisma";
+
 async function getTotalJobs() {
 	return prisma.job.count();
 }
 
 // Function to fetch total number of available positions
-// Assuming 'positions' field represents the number of positions for each job
+
 async function getAvailablePositions() {
 	const jobs = await prisma.job.findMany({
 		select: {

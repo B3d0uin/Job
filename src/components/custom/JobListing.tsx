@@ -76,7 +76,7 @@ export default async function JobListing({query, currentPage}: {
 							</div>
 							<div
 								className="lg:flex grid grid-rows-2 items-center space-x-2 group absolute top-10 md:top-4 right-2 md:right-4">
-								{daysSincePublished(post.publishedDate) <= 5 && (
+								{daysSincePublished(post.publishedDate) <= 15 && (
 									<Badge color="red" className="">
 										<FireIcon width="24" height="24"
 												  className="w-4 h-4  text-charcoal/70"/>

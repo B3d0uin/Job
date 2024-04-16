@@ -12,11 +12,9 @@ const defaultContextValue: SidebarContextType = {
 	setSidebarOpen: () => {
 	}, // This is just a placeholder, it will be replaced by the actual function.
 };
-
 interface SidebarProviderProps {
 	children: ReactNode;
 }
-
 const SidebarContext = createContext(defaultContextValue);
 
 export function useSidebar() {

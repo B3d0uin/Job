@@ -8,6 +8,7 @@ import {useDebouncedCallback} from 'use-debounce';
 import {Fragment} from 'react'
 import {Menu, Transition} from '@headlessui/react'
 import {ChevronDownIcon} from '@heroicons/react/20/solid'
+import {AdjustmentsVerticalIcon} from "@heroicons/react/24/solid";
 
 function classNames(...classes: any[]) {
 	return classes.filter(Boolean).join(' ')
@@ -44,7 +45,7 @@ export default function Search() {
 				   defaultValue={searchParams.get('query')?.toString()}
 			/>
 			<MagnifyingGlassIcon
-				className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900"/>
+				className="absolute hidden md:block left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900"/>
 		</div>
 			<Example/>
 		</div>
@@ -57,7 +58,7 @@ function Example() {
 			<div>
 				<Menu.Button
 					className="inline-flex  w-fit justify-center gap-x-1.5 rounded-md  px-3 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-					<Cog6ToothIcon width="24"
+					<AdjustmentsVerticalIcon width="24"
 								   height="24"
 								   className="w-5 h-5 text-charcoal/70"/>
 				
@@ -74,14 +75,14 @@ function Example() {
 				leaveTo="transform opacity-0 scale-95"
 			>
 				<Menu.Items
-					className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-lightForegroundColor  shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+					className="absolute right-0 z-10  mt-2 w-56 origin-top-right rounded-md bg-zinc-300  shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
 					<div className="py-1">
 						<Menu.Item>
 							{({active}) => (
 								<a
 									href="#"
 									className={classNames(
-										active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+										active ? 'bg-gray-100 text-gray-900' : 'text-gray-700 ',
 										'block px-4 py-2 text-sm'
 									)}
 								>

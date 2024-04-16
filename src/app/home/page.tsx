@@ -5,12 +5,12 @@ import {
 } from '@heroicons/react/24/outline'
 
 
-import {SideBar} from "@lib/components/custom/sidebar/SideBar";
+import {SideBar} from "@lib/app/test/components/sidebar/SideBar";
 import JobListing from "@lib/components/custom/JobListing";
 import {Suspense} from "react";
 
 import Skeleton from "@lib/components/custom/Skeleton";
-import Search from "@lib/components/custom/Search";
+import Search from "@lib/app/test/components/Search";
 import {getJobsByTitle} from "@lib/utils/JobUtils";
 import Pagination from "@lib/components/custom/Pagination";
 

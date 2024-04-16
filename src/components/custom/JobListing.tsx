@@ -93,8 +93,9 @@ export default async function JobListing({query, currentPage}: {
 							</div>
 							
 						</div>
-						<div className="grid gap-2 prose min-w-full">
-							<p className="text-sm leading-none   line-clamp-4  ">
+						<div
+							className="grid gap-2 prose leading-snug min-w-full">
+							<p className="text-sm leading-snug   line-clamp-4  ">
 								{sanitizeDescription(post.description)}
 							</p>
 						</div>

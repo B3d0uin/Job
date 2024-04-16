@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import {Inter, Roboto_Mono} from "next/font/google";
 import "./globals.css";
-import {SideBar} from "@lib/components/custom/sidebar/SideBar";
+import {SideBar} from "@lib/app/test/components/sidebar/SideBar";
 import React from "react";
 
 

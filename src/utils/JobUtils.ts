@@ -1,9 +1,7 @@
 // JobUtils.ts
 
 import moment from "moment";
-import {prisma} from "@lib/utils/prisma";
-
-
+import {prisma} from "@lib/utils/prisma"
 export const getAllJobs = async () => {
 	return prisma.job.findMany();
 }

@@ -171,7 +171,8 @@ export function Switch({
                 'forced-colors:outline forced-colors:[--switch-bg:Highlight] dark:forced-colors:[--switch-bg:Highlight]',
 
                 // Unchecked
-                'bg-zinc-200 ring-1 ring-inset ring-black/5 dark:bg-white/5 dark:ring-white/15',
+                'bg-zinc-200 ring-1 ring-inset ring-black/5' +
+                ' dark:bg-zinc-950/5 dark:ring-zinc-950/15',
 
                 // Checked
                 'data-[checked]:bg-[--switch-bg] data-[checked]:ring-[--switch-bg-ring] dark:data-[checked]:bg-[--switch-bg] dark:data-[checked]:ring-[--switch-bg-ring]',

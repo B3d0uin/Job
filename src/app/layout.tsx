@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import {Inter, Roboto_Mono} from "next/font/google";
 import "./globals.css";
-import {SideBar} from "@lib/components/custom/sideBar";
+import {SideBar} from "@lib/components/custom/sidebar/SideBar";
 import React from "react";
 
 
@@ -27,7 +27,8 @@ export default function RootLayout({
 }>) {
   return (
      <html lang="en" className={`${inter.variable} ${roboto_mono.variable} h-full`}>
-     <body className={`${inter.variable} ${roboto_mono.variable} font-sans h-full bg-charcoal`}>
+     <body
+         className={`${inter.variable} ${roboto_mono.variable} font-sans h-full bg-lightForegroundColor`}>
      {children}</body>
      </html>
   );

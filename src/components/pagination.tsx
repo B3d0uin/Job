@@ -18,8 +18,10 @@ export function PaginationPrevious({
     children?: React.ReactNode
 }) {
     return (
-        <span className="grow basis-0">
-      <Button {...(href === null ? {disabled: true} : {href})} plain aria-label="Previous page">
+        <span className="grow basis-0 ">
+      <Button {...(href === null ? {disabled: true} : {href})} plain
+              aria-label="Previous page"
+              className="!text-darkBackgroundColor hover:!bg-zinc-950/10">
         <svg className="stroke-current" data-slot="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <path
               d="M2.75 8H13.25M2.75 8L5.25 5.5M2.75 8L5.25 10.5"
@@ -42,8 +44,10 @@ export function PaginationNext({
     children?: React.ReactNode
 }) {
     return (
-        <span className="flex grow basis-0 justify-end">
-      <Button {...(href === null ? {disabled: true} : {href})} plain aria-label="Next page">
+        <span className="flex grow basis-0 justify-end ">
+      <Button {...(href === null ? {disabled: true} : {href})} plain
+              aria-label="Next page"
+              className="!text-darkBackgroundColor hover:!bg-zinc-950/10">
         {children}
           <svg className="stroke-current" data-slot="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <path
@@ -78,8 +82,11 @@ export function PaginationPage({
             aria-label={`Page ${children}`}
             aria-current={current ? 'page' : undefined}
             className={clsx(
-                'min-w-[2.25rem] before:absolute before:-inset-px before:rounded-lg',
-                current && 'before:bg-zinc-950/5 dark:before:bg-white/10'
+                'min-w-[2.25rem] hover:!bg-zinc-950/10' +
+                ' !text-darkBackgroundColor' +
+                ' before:absolute before:-inset-px' +
+                ' before:rounded-lg',
+                current && 'before:bg-zinc-950/50 dark:before:bg-zinc-950/10'
             )}
         >
             <span className="-mx-0.5">{children}</span>
@@ -91,7 +98,7 @@ export function PaginationGap() {
     return (
         <div
             aria-hidden="true"
-            className="w-[2.25rem] select-none text-center text-sm/6 font-semibold text-zinc-950 dark:text-white"
+            className="w-[2.25rem] select-none text-center text-sm/6 font-semibold text-zinc-500 dark:!text-zinc-250"
         >
             &hellip;
         </div>

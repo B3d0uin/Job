@@ -67,7 +67,7 @@ const base = [
     'dark:before:hidden',
 
     // Background color applied to control in dark mode
-    'dark:bg-white/5 dark:group-data-[checked]:bg-[--radio-checked-bg]',
+    'dark:bg-zinc-950/10 dark:group-data-[checked]:bg-[--radio-checked-bg]',
 
     // Border
     'border border-zinc-950/15 group-data-[checked]:border-transparent group-data-[checked]:group-data-[hover]:border-transparent group-data-[hover]:border-zinc-950/30 group-data-[checked]:bg-[--radio-checked-border]',

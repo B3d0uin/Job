@@ -5,7 +5,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 
-import {SideBar} from "@lib/components/custom/sideBar";
+import {SideBar} from "@lib/components/custom/sidebar/SideBar";
 import JobListing from "@lib/components/custom/JobListing";
 import {Suspense} from "react";
 
@@ -23,7 +23,7 @@ const navigation = [
 ]
 
 
-export default async function Example({searchParams,}: {
+export default async function Example({searchParams}: {
 	searchParams?: {
 		query?: string;
 		page?: string;

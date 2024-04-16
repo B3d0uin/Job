@@ -9,10 +9,11 @@ const config: Config = {
     theme: {
         extend: {
           colors: {
-            tangerine: '#FF5B19',
-            charcoal: '#161616',
-            platinum: '#E5E3D2',
-            powder: '#AECACD',
+              platinumColor: '#E5E3D2',
+              customGray: '#6b6b6b',
+              darkBackgroundColor: '#424242',
+              darkForegroundColor: '#4C4F69',
+              lightForegroundColor: '#e9e9e9'
           },
             fontFamily: {
                 sans: ['var(--font-inter)'],
@@ -25,6 +26,8 @@ const config: Config = {
             },
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/typography'),
+    ],
 };
 export default config;

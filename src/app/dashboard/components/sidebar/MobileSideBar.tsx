@@ -2,7 +2,7 @@
 import {Dispatch, Fragment, SetStateAction, useState} from "react";
 import {Dialog, Transition} from "@headlessui/react";
 import {XMarkIcon} from "@heroicons/react/24/solid";
-import {useSidebar} from "@lib/app/test/components/sidebar/SidebarContext";
+import {useSidebar} from "@lib/app/dashboard/components/sidebar/SidebarContext";
 
 function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(' ')

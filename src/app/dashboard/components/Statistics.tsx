@@ -14,7 +14,7 @@ export default async function Stats() {
 							<div
 								className="mt-4 text-lg leading-8 font-mono text-zinc-500">
 								
-								<h2 className="text-lg font-bold tracking-tight  sm:text-lg text-zinc-500">Today's
+								<h2 className="text-lg font-bold tracking-tight sm:text-lg text-zinc-500">Today&apos;s
 									ResuMeAI Live Statistics</h2>
 							</div>
 						</div>

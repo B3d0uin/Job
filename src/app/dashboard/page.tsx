@@ -1,12 +1,14 @@
-import {SideBar} from "@lib/app/test/components/sidebar/SideBar";
-import {SidebarProvider} from "@lib/app/test/components/sidebar/SidebarContext";
+import {SideBar} from "@lib/app/dashboard/components/sidebar/SideBar";
+import {
+    SidebarProvider
+} from "@lib/app/dashboard/components/sidebar/SidebarContext";
 import JobListing from "@lib/components/custom/JobListing";
 import {getJobsByTitle} from "@lib/utils/JobUtils";
 import {Suspense} from "react";
 import Skeleton from "@lib/components/custom/Skeleton";
-import Search from "@lib/app/test/components/Search";
+import Search from "@lib/app/dashboard/components/Search";
 import Pagination from "@lib/components/custom/Pagination";
-import Stats from "@lib/app/test/components/Statistics";
+import Stats from "@lib/app/dashboard/components/Statistics";
 
 export default async function Example({searchParams}: {
     searchParams?: {

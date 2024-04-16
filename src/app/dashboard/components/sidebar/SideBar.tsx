@@ -10,8 +10,10 @@ import {
 	EnvelopeIcon, FolderIcon, HomeIcon, MagnifyingGlassIcon, UsersIcon,
 	XMarkIcon
 } from "@heroicons/react/24/solid";
-import {MobileSideBar} from "@lib/app/test/components/sidebar/MobileSideBar";
-import {useSidebar} from "@lib/app/test/components/sidebar/SidebarContext";
+import {
+  MobileSideBar
+} from "@lib/app/dashboard/components/sidebar/MobileSideBar";
+import {useSidebar} from "@lib/app/dashboard/components/sidebar/SidebarContext";
 
 function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(' ')

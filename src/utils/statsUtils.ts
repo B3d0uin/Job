@@ -39,12 +39,24 @@ async function getNewJobsPostedToday() {
 		},
 	});
 }
-
+//  * fixed waterfall caused by await
 async function fetchStatistics() {
-	const totalJobs = await getTotalJobs();
-	const availablePositions = await getAvailablePositions();
-	const jobsWithoutExperience = await getJobsWithoutExperience();
-	const newJobsPostedToday = await getNewJobsPostedToday();
+	const totalJobsPromise = getTotalJobs();
+	const availablePositionsPromise = getAvailablePositions();
+	const jobsWithoutExperiencePromise = getJobsWithoutExperience();
+	const newJobsPostedTodayPromise = getNewJobsPostedToday();
+	
+	const [
+		totalJobs,
+		availablePositions,
+		jobsWithoutExperience,
+		newJobsPostedToday,
+	] = await Promise.all([
+		totalJobsPromise,
+		availablePositionsPromise,
+		jobsWithoutExperiencePromise,
+		newJobsPostedTodayPromise,
+	]);
 	
 	const formatNumberWithCommas = (number: number) => {
 		return number.toLocaleString();
@@ -54,22 +66,22 @@ async function fetchStatistics() {
 		{
 			id: 1,
 			name: 'Total Jobs',
-			value: `${formatNumberWithCommas(totalJobs)}+`
+			value: `${formatNumberWithCommas(totalJobs)}+`,
 		},
 		{
 			id: 2,
 			name: 'Available Positions',
-			value: `${formatNumberWithCommas(availablePositions)}+`
+			value: `${formatNumberWithCommas(availablePositions)}+`,
 		},
 		{
 			id: 3,
 			name: 'Jobs Without Experience',
-			value: `${formatNumberWithCommas(jobsWithoutExperience)}+`
+			value: `${formatNumberWithCommas(jobsWithoutExperience)}+`,
 		},
 		{
 			id: 4,
 			name: 'New Jobs Posted Today',
-			value: `${formatNumberWithCommas(newJobsPostedToday)}+`
+			value: `${formatNumberWithCommas(newJobsPostedToday)}+`,
 		},
 	];
 }

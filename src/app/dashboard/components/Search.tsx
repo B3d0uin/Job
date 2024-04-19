@@ -1,13 +1,11 @@
 'use client';
-
-import {Cog6ToothIcon, MagnifyingGlassIcon} from '@heroicons/react/24/outline';
+import {MagnifyingGlassIcon} from '@heroicons/react/24/outline';
 import {Input} from "@lib/components/input";
 import {useSearchParams, usePathname, useRouter} from 'next/navigation';
 import {useDebouncedCallback} from 'use-debounce';
 
 import {Fragment} from 'react'
 import {Menu, Transition} from '@headlessui/react'
-import {ChevronDownIcon} from '@heroicons/react/20/solid'
 import {AdjustmentsVerticalIcon} from "@heroicons/react/24/solid";
 
 function classNames(...classes: any[]) {
@@ -29,7 +27,7 @@ export default function Search() {
 			params.delete('query');
 		}
 		replace(`${pathname}?${params.toString()}`);
-	}, 100);
+	}, 200);
 	
 	return (
 		<div className="flex  gap-2">
@@ -119,7 +117,7 @@ function Example() {
 						</Menu.Item>
 						<form method="POST" action="#">
 							<Menu.Item>
-								{({active}) => (
+								{({act100ive}) => (
 									<button
 										type="submit"
 										className={classNames(

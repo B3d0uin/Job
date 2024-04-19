@@ -2,61 +2,22 @@
 // Function to fetch total number of jobs
 import {prisma} from "@lib/utils/prisma";
 
-async function getTotalJobs() {
-	return prisma.job.count();
-}
-
-// Function to fetch total number of available positions
-
-async function getAvailablePositions() {
-	const jobs = await prisma.job.findMany({
-		select: {
-			positions: true,
-		},
-	});
-	return jobs.reduce((acc, job) => acc + job.positions, 0);
-}
-
-// Function to fetch jobs that do not require experience
-async function getJobsWithoutExperience() {
-	return prisma.job.count({
-		where: {
-			requiresExperience: false,
-		},
-	});
-}
-
-// Function to fetch the number of new jobs posted today
-async function getNewJobsPostedToday() {
+// Fetch Statistics using Prisma transactions
+async function fetchStatistics() {
 	const today = new Date();
 	today.setHours(0, 0, 0, 0);
 	
-	return prisma.job.count({
-		where: {
-			publishedDate: {
-				gte: today,
-			},
-		},
-	});
-}
-//  * fixed waterfall caused by await
-async function fetchStatistics() {
-	const totalJobsPromise = getTotalJobs();
-	const availablePositionsPromise = getAvailablePositions();
-	const jobsWithoutExperiencePromise = getJobsWithoutExperience();
-	const newJobsPostedTodayPromise = getNewJobsPostedToday();
-	
-	const [
-		totalJobs,
-		availablePositions,
-		jobsWithoutExperience,
-		newJobsPostedToday,
-	] = await Promise.all([
-		totalJobsPromise,
-		availablePositionsPromise,
-		jobsWithoutExperiencePromise,
-		newJobsPostedTodayPromise,
+	const operations = await prisma.$transaction([
+		prisma.job.count(),
+		prisma.job.findMany({select: { positions: true }}),
+		prisma.job.count({ where: { requiresExperience: false }}),
+		prisma.job.count({ where: { publishedDate: { gte: today }}}),
 	]);
+	
+	const totalJobs = operations[0];
+	const availablePositions = operations[1].reduce((acc, job) => acc + job.positions, 0);
+	const jobsWithoutExperience = operations[2];
+	const newJobsPostedToday = operations[3];
 	
 	const formatNumberWithCommas = (number: number) => {
 		return number.toLocaleString();

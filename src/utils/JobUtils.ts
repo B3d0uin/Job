@@ -2,8 +2,12 @@
 
 import moment from "moment";
 import {prisma} from "@lib/utils/prisma"
+import { performance } from 'perf_hooks';
 
 export const getJobsByTitle = async (query: string, page: number, pageSize: number = 10) => {
+	// starting time
+	const start = performance.now();
+	
 	const pageNumber = Math.max(page, 1);
 	const skip = (pageNumber - 1) * pageSize;
 	
@@ -27,6 +31,14 @@ export const getJobsByTitle = async (query: string, page: number, pageSize: numb
 			},
 		})
 	]);
+	
+	// end time
+	const end = performance.now();
+	
+	// time difference
+	const diff = end - start;
+	
+	console.log('Execution time: ' + diff + 'ms');
 	
 	return { jobs, totalCount };
 };

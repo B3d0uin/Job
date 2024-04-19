@@ -117,7 +117,7 @@ function Example() {
 						</Menu.Item>
 						<form method="POST" action="#">
 							<Menu.Item>
-								{({act100ive}) => (
+								{({active}) => (
 									<button
 										type="submit"
 										className={classNames(

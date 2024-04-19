@@ -1,9 +1,3 @@
-import {
-	BookmarkIcon, BriefcaseIcon,
-	Cog6ToothIcon,
-	DocumentTextIcon, EnvelopeIcon
-} from '@heroicons/react/24/outline'
-
 
 import {SideBar} from "@lib/app/dashboard/components/sidebar/SideBar";
 import JobListing from "@lib/components/custom/JobListing";
@@ -14,13 +8,6 @@ import Search from "@lib/app/dashboard/components/Search";
 import {getJobsByTitle} from "@lib/utils/JobUtils";
 import Pagination from "@lib/components/custom/Pagination";
 
-const navigation = [
-	{name: 'Dashboard', href: '#', icon: BriefcaseIcon, current: true},
-	{name: 'Email', href: '#', icon: EnvelopeIcon, current: false},
-	{name: 'Bookmarked', href: '#', icon: BookmarkIcon, current: false},
-	{name: 'Resume', href: '#', icon: DocumentTextIcon, current: false},
-	{name: 'Settings', href: '#', icon: Cog6ToothIcon, current: false},
-]
 
 
 export default async function Example({searchParams}: {
@@ -55,6 +42,8 @@ export default async function Example({searchParams}: {
 				</Suspense>
 				<Pagination query={query} currentPage={currentPage}
 							totalPages={totalPages}/>
+			
+			
 			</aside>
 		</div>
 	

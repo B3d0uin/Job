@@ -14,8 +14,7 @@ import {Button} from "@lib/components/button";
 
 import {
 	daysLeftUntilLastApplication,
-	daysSincePublished,
-	getAllJobs, getJobsByTitle,
+	daysSincePublished, getJobsByTitle,
 	sanitizeDescription
 } from "@lib/utils/JobUtils";
 import {FireIcon} from "@heroicons/react/20/solid";

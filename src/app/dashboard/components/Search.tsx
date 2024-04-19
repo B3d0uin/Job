@@ -29,7 +29,7 @@ export default function Search() {
 			params.delete('query');
 		}
 		replace(`${pathname}?${params.toString()}`);
-	}, 350);
+	}, 100);
 	
 	return (
 		<div className="flex  gap-2">

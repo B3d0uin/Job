@@ -141,7 +141,7 @@ export default async function JobListing({query, currentPage}: {
 								className="cursor-pointer border-b-2 !border-black !border-x-0 !border-t-0 transform transition duration-150 ease-in-out active:scale-95 active:border-2 shadow-sm shadow-white active:py-1"
 							>
 								<SparklesIcon/>
-								AI-Tailor
+								ResuMe-IT
 							</Button>
 						</div>
 					</div>

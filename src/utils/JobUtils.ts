@@ -21,6 +21,21 @@ export const getJobsByTitle = async (query: string, page: number, pageSize: numb
 					mode: 'insensitive',
 				},
 			},
+		   select: {
+			  id: true,
+			  title: true,
+			  description: true,
+			  publishedDate: true,
+			  occupation: true,
+			  companyName: true,
+			  employmentType: true,
+			  duration: true,
+			  lastApplicationDate: true,
+			  positions: true,
+			  requiresExperience: true,
+			  municipality: true,
+			  
+		   },
 		}),
 		prisma.job.count({
 			where: {
@@ -39,7 +54,7 @@ export const getJobsByTitle = async (query: string, page: number, pageSize: numb
 	const diff = end - start;
 	
 	console.log('Execution time: ' + diff + 'ms');
-	
+   console.log(jobs)
 	return { jobs, totalCount };
 };
 

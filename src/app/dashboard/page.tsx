@@ -13,7 +13,6 @@ import {Badge} from "@lib/components/badge";
 import {Field, Label} from "@lib/components/fieldset";
 import {Textarea} from "@lib/components/textarea";
 import {DocumentPlusIcon, PaperAirplaneIcon, PlusCircleIcon} from "@heroicons/react/24/outline";
-
 export const revalidate = 3600
 export default async function Example({searchParams}: {
     searchParams?: {
@@ -38,13 +37,13 @@ export default async function Example({searchParams}: {
                         className="px-4 py-10 sm:px-6 lg:px-5 lg:py-6 flex flex-col gap-2">{/* Main area */}
 
                         <Search/>
-                        <Suspense key={query + currentPage}
-                                  fallback={<Skeleton/>}>
-                            <JobListing query={query}
-                                        currentPage={currentPage}/>
-                        </Suspense>
-                        <Pagination query={query} currentPage={currentPage}
-                                    totalPages={totalPages}/>
+                        {/*<Suspense key={query + currentPage}*/}
+                        {/*          fallback={<Skeleton/>}>*/}
+                        {/*    <JobListing query={query}*/}
+                        {/*                currentPage={currentPage}/>*/}
+                        {/*</Suspense>*/}
+                        {/*<Pagination query={query} currentPage={currentPage}*/}
+                        {/*            totalPages={totalPages}/>*/}
 
                     </div>
                 </div>
@@ -57,22 +56,24 @@ export default async function Example({searchParams}: {
                     <div className="divide-y divide-zinc-950/10 h-full overflow-hidden rounded-lg  shadow">
                         <div className="px-4 py-5 sm:px-6">
                             {/* TOP PART*/}
-                            <ul className="grid grid-cols-2 gap-4 text-sm justify-center items-center">
-                                <h2 className="col-span-2 text-center font-mono font-bold text-2xl flex items-center gap-2 justify-center">ResuMeAI <Badge
+                            <ul
+                              className="flex flex-col gap-4 text-sm justify-center items-center">
+                                <h2
+                                  className="text-center font-mono font-bold text-2xl flex items-center gap-2 justify-center">ResuMeAI <Badge
                                     color="violet">BETA</Badge></h2>
-                                <li className="flex justify-between px-10"><span
-                                    className="font-semibold ">Metadata: </span> TimeTjek AB
+                                <div
+                                  className="flex justify-between w-full border border-zinc-400 rounded-md p-2">
+                                    <li className=""><span
+                                      className="font-semibold ">Metadata: </span> -
                                 </li>
-
-                                <li className="flex justify-between px-10"><span
+                                    <li className=" "><span
                                     className="font-semibold">Position: </span> Systemutvecklare
                                 </li>
-                                <li className="flex justify-between px-10"><span
-                                    className="font-semibold">Location: </span> Stockholm
-                                </li>
-                                <li className="flex justify-between px-10"><span
+                                    
+                                    <li className=" "><span
                                     className="font-semibold">Mode: </span> Cover Letter
                                 </li>
+                                </div>
                             </ul>
                         </div>
                         <div className="px-4 py-5 sm:p-6 h-[70%]">

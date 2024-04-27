@@ -3,7 +3,6 @@ import moment from "moment";
 import {prisma} from "@lib/utils/prisma"
 import { performance } from 'perf_hooks';
 import {cache} from 'react';
-
 export const revalidate = 3600
 export const getJobsByTitle = cache(async (query: string, page: number, pageSize: number = 10) => {
 	// starting time

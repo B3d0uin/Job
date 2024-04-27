@@ -18,7 +18,6 @@ import {
 	sanitizeDescription
 } from "@lib/utils/JobUtils";
 import {FireIcon} from "@heroicons/react/20/solid";
-
 export const runtime = 'edge'
 
 export default async function JobListing({query, currentPage}: {

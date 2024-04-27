@@ -1,10 +1,11 @@
 // JobUtils.ts
-
 import moment from "moment";
 import {prisma} from "@lib/utils/prisma"
 import { performance } from 'perf_hooks';
+import {cache} from 'react';
 
-export const getJobsByTitle = async (query: string, page: number, pageSize: number = 10) => {
+export const revalidate = 3600
+export const getJobsByTitle = cache(async (query: string, page: number, pageSize: number = 10) => {
 	// starting time
 	const start = performance.now();
 	
@@ -15,6 +16,9 @@ export const getJobsByTitle = async (query: string, page: number, pageSize: numb
 		prisma.job.findMany({
 			skip: skip,
 			take: pageSize,
+		   orderBy: {
+			  publishedDate: 'desc',
+		   },
 			where: {
 				title: {
 					contains: query,
@@ -49,14 +53,12 @@ export const getJobsByTitle = async (query: string, page: number, pageSize: numb
 	
 	// end time
 	const end = performance.now();
-	
 	// time difference
 	const diff = end - start;
 	
 	console.log('Execution time: ' + diff + 'ms');
-   console.log(jobs)
 	return { jobs, totalCount };
-};
+});
 
 export function sanitizeDescription(input: string): string {
 	const REGEX_HTML_TAG: RegExp = /(<([^>]+)>)/gi;

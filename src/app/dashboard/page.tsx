@@ -14,6 +14,7 @@ import {Field, Label} from "@lib/components/fieldset";
 import {Textarea} from "@lib/components/textarea";
 import {DocumentPlusIcon, PaperAirplaneIcon, PlusCircleIcon} from "@heroicons/react/24/outline";
 
+export const revalidate = 3600
 export default async function Example({searchParams}: {
     searchParams?: {
         query?: string;
@@ -24,7 +25,7 @@ export default async function Example({searchParams}: {
     const currentPage = Number(searchParams?.page) || 1;
     const {totalCount} = await getJobsByTitle(query, currentPage);
     const totalPages = Math.ceil(totalCount / 10);
-
+    // !TODO fix that homepage shows old listing first
     return (
         <div>
             <SidebarProvider>

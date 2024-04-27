@@ -1,6 +1,7 @@
 import fetchStatistics from "@lib/utils/statsUtils";
 
-
+export const revalidate = 3600
+export const runtime = 'edge'
 export default async function Stats() {
 	const stats = await fetchStatistics();
 	return (

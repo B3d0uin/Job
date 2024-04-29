@@ -28,7 +28,6 @@ export default function Search() {
 		}
 		replace(`${pathname}?${params.toString()}`);
 	}, 200);
-	
 	return (
 		<div className="flex  gap-2">
 		<div className="relative flex flex-1 flex-shrink-0">
